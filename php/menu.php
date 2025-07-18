@@ -1,6 +1,6 @@
 <?php
 //mapa
-//campañas(?)
+//campañaslider(?)
 ?>
 <!DOCTYPE html>
 <html lang="en">
