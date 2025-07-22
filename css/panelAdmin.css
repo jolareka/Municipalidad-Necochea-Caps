@@ -1,0 +1,36 @@
+.lista-caps-admin { 
+    max-width: 500px; 
+    margin: 40px auto; 
+}
+.renglon-cap { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background: #fff; 
+    margin-bottom: 10px; 
+    padding: 10px 16px; 
+    border-radius: 6px; 
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07); 
+}
+.nombre-cap { 
+    font-weight: bold; 
+}
+.acciones-cap { 
+    display: flex; 
+    gap: 8px; 
+}
+.acciones-cap form { 
+    display: inline; 
+}
+.acciones-cap button, .acciones-cap a { 
+    padding: 6px 12px; 
+    border-radius: 4px; 
+    border: none; 
+    background: #2c3e50; 
+    color: #fff; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+.acciones-cap button.eliminar { 
+    background: #c00; 
+}

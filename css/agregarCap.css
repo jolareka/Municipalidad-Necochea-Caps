@@ -1,0 +1,67 @@
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.titulo-form {
+    text-align: center;
+    margin-top: 32px;
+    color: #333;
+}
+label {
+    display: block;
+    margin: 12px 0 4px 0;
+    color: #444;
+}
+input[type="text"], input[type="file"], select {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+button:hover {
+    background: #1565c0;
+}
+a {
+    color: #1976d2;
+    text-decoration: none;
+    margin-left: 8px;
+}
+#datos-campania {
+    margin-bottom: 10px;
+}
+/* Mensaje de guardado (éxito/error) */
+.mensaje-guardado {
+    background: #e0ffe0;
+    color: #2d7a2d;
+    padding: 10px;
+    border: 1px solid #b2e5b2;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+.mensaje-guardado.error {
+    background: #ffe0e0;
+    color: #a22d2d;
+    border-color: #e5b2b2;
+}
