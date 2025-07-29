@@ -1,0 +1,195 @@
+/* Estilos para el formulario de CAPS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"], 
+input[type="tel"], 
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.image-preview {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 30px;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffe6e6;
+    border-radius: 5px;
+}
+
+.success {
+    color: green;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e6ffe6;
+    border-radius: 5px;
+}
+
+.prestaciones-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.prestaciones-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.prestacion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.prestacion-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 180px;
+}
+
+.prestacion-checkbox input[type="checkbox"] {
+    transform: scale(1.2);
+    margin: 0;
+}
+
+.prestacion-details {
+    display: flex;
+    flex: 1;
+    gap: 15px;
+}
+
+.profesional-select, .horario-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.profesional-select select, .horario-input input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.profesional-select select:disabled, .horario-input input:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+}
+
+.prestacion-details label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .prestacion-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .prestacion-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .profesional-select, .horario-input {
+        min-width: auto;
+    }
+}
