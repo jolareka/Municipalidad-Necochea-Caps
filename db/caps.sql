@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2025 a las 20:33:16
+-- Tiempo de generación: 30-07-2025 a las 05:43:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -21,9 +21,6 @@ SET time_zone = "+00:00";
 -- Base de datos: `caps`
 --
 
-CREATE DATABASE IF NOT EXISTS `caps` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `caps`;
-
 -- --------------------------------------------------------
 
 --
@@ -34,6 +31,13 @@ CREATE TABLE `campañas` (
   `id_campañas` int(11) NOT NULL,
   `imagen` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `campañas`
+--
+
+INSERT INTO `campañas` (`id_campañas`, `imagen`) VALUES
+(1, 'campaña pap.png');
 
 -- --------------------------------------------------------
 
@@ -60,13 +64,23 @@ CREATE TABLE `campañas_caps` (
 CREATE TABLE `caps` (
   `id_caps` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
+  `descripcion` varchar(150) NOT NULL,
   `coordenadas` varchar(150) NOT NULL,
-  `horario` time NOT NULL,
+  `horario` varchar(70) NOT NULL,
   `imagen` varchar(50) NOT NULL,
-  `telefono` int(50) NOT NULL,
+  `telefono` int(150) NOT NULL,
   `Campaña` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `caps`
+--
+
+INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) VALUES
+(1, 'Doctor Carlos Fucile', 'Centro de atencion primaria de la salud Carlos Fucile', '-38.57816486446628,-58.72158052883532', '08:00', 'Fucile.jpeg', 111111111, 0),
+(2, 'Barrio Sur', 'Centro periferico barrio sur', '-38.56709554734896, -58.74036619782407', '08:00', 'PerifericoBarrioSur.jpeg', 226243818, 0),
+(3, 'Centro Prueba', 'prueba', '-38.559336899309834, -58.62806087327264', '08:00', 'richard-sanchez-en-el-club-america-1751983737-hq.w', 2147483647, 0),
+(4, 'prueba 2', 'probando 2 jaja', '-38.57816486446628,-58.7215805288353234', '08:00', '', 123, 1);
 
 -- --------------------------------------------------------
 
@@ -79,6 +93,17 @@ CREATE TABLE `prestaciones` (
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `prestaciones`
+--
+
+INSERT INTO `prestaciones` (`id_prestaciones`, `nombre`) VALUES
+(1, 'Vacunación'),
+(2, 'Consultorio general'),
+(3, 'Pediatría'),
+(4, 'Ginecología'),
+(5, 'Kinesiología');
+
 -- --------------------------------------------------------
 
 --
@@ -88,8 +113,21 @@ CREATE TABLE `prestaciones` (
 CREATE TABLE `prestaciones_caps` (
   `id_prestaciones_caps` int(11) NOT NULL,
   `id_caps` int(11) NOT NULL,
-  `id_prestaciones` int(11) NOT NULL
+  `id_prestaciones` int(11) NOT NULL,
+  `id_profesional` int(11) DEFAULT NULL,
+  `horario_profesional` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `prestaciones_caps`
+--
+
+INSERT INTO `prestaciones_caps` (`id_prestaciones_caps`, `id_caps`, `id_prestaciones`, `id_profesional`, `horario_profesional`) VALUES
+(27, 3, 2, NULL, NULL),
+(30, 4, 1, NULL, NULL),
+(31, 4, 2, NULL, NULL),
+(34, 1, 2, 2, '08:00-20:00'),
+(35, 2, 2, 2, '08:00-20:00');
 
 -- --------------------------------------------------------
 
@@ -102,6 +140,14 @@ CREATE TABLE `profesionales` (
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `profesionales`
+--
+
+INSERT INTO `profesionales` (`id_profesionales`, `nombre`, `apellido`) VALUES
+(1, 'Maria', 'Rodriguez'),
+(2, 'Juan', 'Mobilia');
 
 -- --------------------------------------------------------
 
@@ -151,8 +197,8 @@ ALTER TABLE `prestaciones`
 ALTER TABLE `prestaciones_caps`
   ADD PRIMARY KEY (`id_prestaciones_caps`),
   ADD UNIQUE KEY `id_prestaciones_caps` (`id_prestaciones_caps`),
-  ADD UNIQUE KEY `FOREIGN` (`id_caps`),
-  ADD UNIQUE KEY `SECUNDARIA` (`id_prestaciones`);
+  ADD UNIQUE KEY `unique_caps_prestacion` (`id_caps`,`id_prestaciones`),
+  ADD KEY `idx_profesional` (`id_profesional`);
 
 --
 -- Indices de la tabla `profesionales`
@@ -164,8 +210,7 @@ ALTER TABLE `profesionales`
 -- Indices de la tabla `profesionales_prestaciones`
 --
 ALTER TABLE `profesionales_prestaciones`
-  ADD PRIMARY KEY (`id_profesionales_prestaciones`),
-  ADD UNIQUE KEY `FOREIGN PROFESIONALES` (`id_profesionales`);
+  ADD PRIMARY KEY (`id_profesionales_prestaciones`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -175,7 +220,7 @@ ALTER TABLE `profesionales_prestaciones`
 -- AUTO_INCREMENT de la tabla `campañas`
 --
 ALTER TABLE `campañas`
-  MODIFY `id_campañas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_campañas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `campañas_caps`
@@ -187,31 +232,31 @@ ALTER TABLE `campañas_caps`
 -- AUTO_INCREMENT de la tabla `caps`
 --
 ALTER TABLE `caps`
-  MODIFY `id_caps` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_caps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `prestaciones`
 --
 ALTER TABLE `prestaciones`
-  MODIFY `id_prestaciones` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_prestaciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `prestaciones_caps`
 --
 ALTER TABLE `prestaciones_caps`
-  MODIFY `id_prestaciones_caps` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_prestaciones_caps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `profesionales`
 --
 ALTER TABLE `profesionales`
-  MODIFY `id_profesionales` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_profesionales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `profesionales_prestaciones`
 --
 ALTER TABLE `profesionales_prestaciones`
-  MODIFY `id_profesionales_prestaciones` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_profesionales_prestaciones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

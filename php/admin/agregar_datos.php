@@ -51,18 +51,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $id_profesional = $_POST['profesional_prestacion'][$indice] ?? null;
                     $horario_profesional = $_POST['horario_profesional'][$indice] ?? '';
                     
-                    // Insertar prestación del centro
-                    mysqli_query($conexion, "INSERT INTO prestaciones_caps (id_caps, id_prestaciones) VALUES ($id_centro, $id_prestacion)");
+                    // CORREGIDO: Usar prestaciones_caps en lugar de dos tablas separadas
+                    $id_prof_value = ($id_profesional && $id_profesional !== '') ? $id_profesional : 'NULL';
+                    $horario_escapado = mysqli_real_escape_string($conexion, $horario_profesional);
                     
-                    // Insertar relación profesional si existe
-                    if ($id_profesional && $id_profesional !== '') {
-                        $horario_escapado = mysqli_real_escape_string($conexion, $horario_profesional);
-                        mysqli_query($conexion, "INSERT INTO profesionales_prestaciones (id_profesionales, horario_profesionales) VALUES ($id_profesional, '$horario_escapado')");
+                    // Insertar en prestaciones_caps con todos los datos
+                    $sql_prestacion = "INSERT INTO prestaciones_caps (id_caps, id_prestaciones, id_profesional, horario_profesional) 
+                                     VALUES ($id_centro, $id_prestacion, $id_prof_value, '$horario_escapado')";
+                    
+                    if (!mysqli_query($conexion, $sql_prestacion)) {
+                        $mensaje = 'Error al asignar prestación: ' . mysqli_error($conexion);
+                        break;
                     }
                 }
             }
             
-            $mensaje = 'Centro de Salud guardado exitosamente.';
+            if (empty($mensaje)) {
+                $mensaje = 'Centro de Salud guardado exitosamente.';
+            }
         } else {
             $mensaje = 'Error al guardar el Centro de Salud: ' . mysqli_error($conexion);
         }
@@ -70,8 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // AGREGAR PROFESIONAL
     if (isset($_POST['guardar_profesional'])) {
-        $nombre_profesional = $_POST['nombre_profesional'] ?? '';
-        $apellido_profesional = $_POST['apellido_profesional'] ?? '';
+        $nombre_profesional = mysqli_real_escape_string($conexion, $_POST['nombre_profesional'] ?? '');
+        $apellido_profesional = mysqli_real_escape_string($conexion, $_POST['apellido_profesional'] ?? '');
         
         if ($nombre_profesional && $apellido_profesional) {
             $consulta = "INSERT INTO profesionales (nombre, apellido) VALUES ('$nombre_profesional', '$apellido_profesional')";
@@ -79,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (mysqli_query($conexion, $consulta)) {
                 $mensaje = 'Profesional guardado exitosamente.';
             } else {
-                $mensaje = 'Error al guardar el profesional.';
+                $mensaje = 'Error al guardar el profesional: ' . mysqli_error($conexion);
             }
         } else {
             $mensaje = 'Complete todos los campos del profesional.';
@@ -106,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // O usar nombre de archivo existente
         if (!$imagen_campania && !empty($_POST['nombre_archivo_existente'])) {
-            $imagen_campania = $_POST['nombre_archivo_existente'];
+            $imagen_campania = mysqli_real_escape_string($conexion, $_POST['nombre_archivo_existente']);
         }
         
         if ($imagen_campania) {
@@ -115,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (mysqli_query($conexion, $consulta)) {
                 $mensaje = 'Campaña guardada exitosamente.';
             } else {
-                $mensaje = 'Error al guardar la campaña.';
+                $mensaje = 'Error al guardar la campaña: ' . mysqli_error($conexion);
             }
         } else {
             $mensaje = 'Debe seleccionar una imagen o especificar un nombre de archivo.';
@@ -124,8 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Obtener datos para los selects
-$lista_prestaciones = mysqli_query($conexion, "SELECT * FROM prestaciones");
-$lista_profesionales = mysqli_query($conexion, "SELECT * FROM profesionales");
+$lista_prestaciones = mysqli_query($conexion, "SELECT * FROM prestaciones ORDER BY nombre");
+$lista_profesionales = mysqli_query($conexion, "SELECT * FROM profesionales ORDER BY nombre, apellido");
 $lista_campanias = mysqli_query($conexion, "SELECT * FROM campañas");
 ?>
 
@@ -199,11 +205,17 @@ $lista_campanias = mysqli_query($conexion, "SELECT * FROM campañas");
                     </label>
                     <select name="campania_seleccionada" id="campania_seleccionada" style="display:none;">
                         <option value="">Seleccionar campaña</option>
-                        <?php while ($campania = mysqli_fetch_assoc($lista_campanias)): ?>
+                        <?php 
+                        if ($lista_campanias && mysqli_num_rows($lista_campanias) > 0):
+                            while ($campania = mysqli_fetch_assoc($lista_campanias)): 
+                        ?>
                             <option value="<?php echo $campania['id_campañas']; ?>">
                                 <?php echo htmlspecialchars($campania['imagen']); ?>
                             </option>
-                        <?php endwhile; ?>
+                        <?php 
+                            endwhile; 
+                        endif;
+                        ?>
                     </select>
                 </div>
                 
@@ -223,25 +235,33 @@ $lista_campanias = mysqli_query($conexion, "SELECT * FROM campañas");
                     <select id="select-prestacion">
                         <option value="">Seleccionar prestación</option>
                         <?php 
-                        mysqli_data_seek($lista_prestaciones, 0);
-                        while ($prestacion = mysqli_fetch_assoc($lista_prestaciones)): 
+                        if ($lista_prestaciones && mysqli_num_rows($lista_prestaciones) > 0):
+                            mysqli_data_seek($lista_prestaciones, 0);
+                            while ($prestacion = mysqli_fetch_assoc($lista_prestaciones)): 
                         ?>
                             <option value="<?php echo $prestacion['id_prestaciones']; ?>">
                                 <?php echo htmlspecialchars($prestacion['nombre']); ?>
                             </option>
-                        <?php endwhile; ?>
+                        <?php 
+                            endwhile; 
+                        endif;
+                        ?>
                     </select>
                     
                     <select id="select-profesional">
                         <option value="">Seleccionar profesional (opcional)</option>
                         <?php 
-                        mysqli_data_seek($lista_profesionales, 0);
-                        while ($profesional = mysqli_fetch_assoc($lista_profesionales)): 
+                        if ($lista_profesionales && mysqli_num_rows($lista_profesionales) > 0):
+                            mysqli_data_seek($lista_profesionales, 0);
+                            while ($profesional = mysqli_fetch_assoc($lista_profesionales)): 
                         ?>
                             <option value="<?php echo $profesional['id_profesionales']; ?>">
                                 <?php echo htmlspecialchars($profesional['nombre'] . ' ' . $profesional['apellido']); ?>
                             </option>
-                        <?php endwhile; ?>
+                        <?php 
+                            endwhile; 
+                        endif;
+                        ?>
                     </select>
                     
                     <input type="text" id="horario-profesional" placeholder="Horario del profesional (ej: 08:00-12:00)">

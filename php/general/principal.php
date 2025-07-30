@@ -16,10 +16,10 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
     <?php if (!empty($caps_js)): ?>
         <?php foreach($caps_js as $columna): ?>
             <div class="cap-item">
-                <img src="./Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($columna['imagen']); ?>">
+                <img src="<?php echo htmlspecialchars($columna['imagen']); ?>">
                 <h2><?php echo htmlspecialchars($columna['nombre']); ?></h2> <!-- Mostrar nombre --> 
                 <p>Descripción: <?php echo htmlspecialchars($columna['descripcion']); ?></p> <!-- Mostrar descripcion -->
-                <p>Coordenadas: <?php echo htmlspecialchars($columna['coordenadas']); ?></p> <!-- Mostrar coordenadas -->
+                <!-- <p>Coordenadas: <?php echo htmlspecialchars($columna['coordenadas']); ?></p> Mostrar coordenadas -->
                 <p>Horario: <?php echo htmlspecialchars($columna['horario']); ?></p> <!-- Mostrar horario -->
                 <p>Teléfono: <?php echo htmlspecialchars($columna['telefono']); ?></p> <!-- Mostrar telefono -->
                 <a href="/Municipalidad-Necochea-Caps/php/general/mostrarCap.php?id_caps=<?php echo $columna['id_caps']; ?>">Ver detalles</a> <!-- Enlace a la pagina de detalles del caps -->

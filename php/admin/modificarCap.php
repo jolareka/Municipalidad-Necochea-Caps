@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Manejar subida de imagen
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         $img_name = time() . '_' . basename($_FILES['imagen']['name']);
-        $img_dest = __DIR__ . '/../../img/caps/' . $img_name;
+        $img_dest = __DIR__ . '/../imagenes/caps/' . $img_name;
         
         // Crear directorio si no existe
         $dir = dirname($img_dest);
@@ -93,13 +93,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $id_profesional = isset($_POST['profesional_' . $id_prestacion]) ? intval($_POST['profesional_' . $id_prestacion]) : NULL;
                 $id_profesional = $id_profesional > 0 ? $id_profesional : NULL;
                 
-                $horario = isset($_POST['horario_' . $id_prestacion]) ? mysqli_real_escape_string($conexion, $_POST['horario_' . $id_prestacion]) : '';
+                $horario_prof = isset($_POST['horario_' . $id_prestacion]) ? mysqli_real_escape_string($conexion, $_POST['horario_' . $id_prestacion]) : '';
                 
                 // Verificar si ya existe esta combinación para evitar duplicados
                 $check = mysqli_query($conexion, "SELECT 1 FROM prestaciones_caps WHERE id_caps = $id_caps AND id_prestaciones = $id_prestacion");
                 if (mysqli_num_rows($check) == 0) {
                     $sql_insert = "INSERT INTO prestaciones_caps (id_caps, id_prestaciones, id_profesional, horario_profesional) 
-                                   VALUES ($id_caps, $id_prestacion, " . ($id_profesional ? $id_profesional : 'NULL') . ", '$horario')";
+                                   VALUES ($id_caps, $id_prestacion, " . ($id_profesional ? $id_profesional : 'NULL') . ", '$horario_prof')";
                     $result = mysqli_query($conexion, $sql_insert);
                     if (!$result) {
                         $error = "Error al asignar prestación: " . mysqli_error($conexion);
@@ -157,11 +157,11 @@ $profesionales = mysqli_query($conexion, "SELECT id_profesionales, nombre, apell
         <h1><?php echo $editando ? 'Editar' : 'Crear'; ?> CAPS</h1>
         
         <?php if (isset($error)): ?>
-            <div class="error"><?php echo $error; ?></div>
+            <div class="error"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
         
         <?php if (isset($mensaje)): ?>
-            <div class="success"><?php echo $mensaje; ?></div>
+            <div class="success"><?php echo htmlspecialchars($mensaje); ?></div>
         <?php endif; ?>
         
         <form method="post" enctype="multipart/form-data">
@@ -199,8 +199,8 @@ $profesionales = mysqli_query($conexion, "SELECT id_profesionales, nombre, apell
                 <?php if (!empty($caps['imagen'])): ?>
                     <div style="margin-top: 10px;">
                         <p>Imagen actual:</p>
-                        <img src="/Municipalidad-Necochea-Caps/img/caps/<?php echo htmlspecialchars($caps['imagen']); ?>" 
-                             class="image-preview" alt="Imagen actual">
+                        <img src="/Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($caps['imagen']); ?>" 
+                             class="image-preview" alt="Imagen actual" style="max-width: 200px; max-height: 150px;">
                     </div>
                 <?php endif; ?>
             </div>
@@ -210,13 +210,14 @@ $profesionales = mysqli_query($conexion, "SELECT id_profesionales, nombre, apell
                     <label>Prestaciones, Profesionales y Horarios:</label>
                     <div class="prestaciones-grid">
                         <?php 
-                        mysqli_data_seek($prestaciones, 0); // Reiniciar el puntero del resultado
-                        while ($prestacion = mysqli_fetch_assoc($prestaciones)): 
-                            $checked = isset($prestaciones_asignadas[$prestacion['id_prestaciones']]) ? 'checked' : '';
-                            $profesional_asignado = isset($prestaciones_asignadas[$prestacion['id_prestaciones']]) ? 
-                                                   $prestaciones_asignadas[$prestacion['id_prestaciones']]['id_profesional'] : '';
-                            $horario_asignado = isset($prestaciones_asignadas[$prestacion['id_prestaciones']]) ? 
-                                               $prestaciones_asignadas[$prestacion['id_prestaciones']]['horario_profesional'] : '';
+                        if ($prestaciones && mysqli_num_rows($prestaciones) > 0):
+                            mysqli_data_seek($prestaciones, 0); // Reiniciar el puntero del resultado
+                            while ($prestacion = mysqli_fetch_assoc($prestaciones)): 
+                                $checked = isset($prestaciones_asignadas[$prestacion['id_prestaciones']]) ? 'checked' : '';
+                                $profesional_asignado = isset($prestaciones_asignadas[$prestacion['id_prestaciones']]) ? 
+                                                       $prestaciones_asignadas[$prestacion['id_prestaciones']]['id_profesional'] : '';
+                                $horario_asignado = isset($prestaciones_asignadas[$prestacion['id_prestaciones']]) ? 
+                                                   $prestaciones_asignadas[$prestacion['id_prestaciones']]['horario_profesional'] : '';
                         ?>
                             <div class="prestacion-item">
                                 <div class="prestacion-checkbox">
@@ -239,14 +240,18 @@ $profesionales = mysqli_query($conexion, "SELECT id_profesionales, nombre, apell
                                                 <?php echo !$checked ? 'disabled' : ''; ?>>
                                             <option value="">Sin profesional</option>
                                             <?php 
-                                            mysqli_data_seek($profesionales, 0);
-                                            while ($profesional = mysqli_fetch_assoc($profesionales)): 
-                                                $selected = ($profesional_asignado == $profesional['id_profesionales']) ? 'selected' : '';
+                                            if ($profesionales && mysqli_num_rows($profesionales) > 0):
+                                                mysqli_data_seek($profesionales, 0);
+                                                while ($profesional = mysqli_fetch_assoc($profesionales)): 
+                                                    $selected = ($profesional_asignado == $profesional['id_profesionales']) ? 'selected' : '';
                                             ?>
                                                 <option value="<?php echo $profesional['id_profesionales']; ?>" <?php echo $selected; ?>>
                                                     <?php echo htmlspecialchars($profesional['nombre'] . ' ' . $profesional['apellido']); ?>
                                                 </option>
-                                            <?php endwhile; ?>
+                                            <?php 
+                                                endwhile; 
+                                            endif;
+                                            ?>
                                         </select>
                                     </div>
                                     
@@ -261,11 +266,13 @@ $profesionales = mysqli_query($conexion, "SELECT id_profesionales, nombre, apell
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile; ?>
+                        <?php 
+                            endwhile; 
+                        else:
+                        ?>
+                            <p style="color: #666; margin-top: 10px;">No hay prestaciones disponibles. <a href="prestaciones.php">Crear prestaciones</a></p>
+                        <?php endif; ?>
                     </div>
-                    <?php if (mysqli_num_rows($prestaciones) == 0): ?>
-                        <p style="color: #666; margin-top: 10px;">No hay prestaciones disponibles. <a href="prestaciones.php">Crear prestaciones</a></p>
-                    <?php endif; ?>
                 </div>
             </div>
             
