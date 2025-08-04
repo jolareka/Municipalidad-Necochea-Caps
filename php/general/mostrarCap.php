@@ -139,6 +139,9 @@ if (!$cap) {
         </script>
 
     </div>
+    <footer>
+      <p>Municipalidad de Necochea</p>
+    </footer>
 </body>
 </html>
 <?php mysqli_close($conexion); ?>

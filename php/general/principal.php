@@ -11,7 +11,6 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
     }
 }
 ?>
-<h1>Centros de Atención Primaria de la Salud (CAPS)</h1>
 <div class="caps-list">
     <?php if (!empty($caps_js)): ?>
         <?php foreach($caps_js as $columna): ?>

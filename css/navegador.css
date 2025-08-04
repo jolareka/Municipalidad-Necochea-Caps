@@ -127,3 +127,36 @@ html {
 *, :after, :before {
     box-sizing: border-box;
 }
+.dropdownmenu ul {
+	list-style: none;
+	width: 100%;
+}
+.dropdownmenu li {
+	float: left;
+	position: relative;
+	width:auto;
+}
+.dropdownmenu a {
+right: 0%;
+	background:#FFFFFF;
+	color: #670066;
+	display: block;
+	font: bold 1.5em sans-serif;
+	padding: 10px 25px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.dropdownmenu li:hover a {
+	background: #ffffff;
+}
+header
+{
+background-color: #670066;
+width: 100%;
+height: 20%;
+}
