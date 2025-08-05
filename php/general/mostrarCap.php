@@ -27,8 +27,8 @@ if (!$cap) {
 <body>
     <h1>Detalle del CAPS</h1>
     <div class="cap-item">
-        <img src="/Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($cap['imagen']); ?>" alt="Imagen del CAPS" class="cap-img">
         <h2><?php echo htmlspecialchars($cap['nombre']); ?></h2>
+        <img src="/Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($cap['imagen']); ?>" alt="Imagen del CAPS" class="cap-img">
         <p><strong>Descripción:</strong> <?php echo htmlspecialchars($cap['descripcion']); ?></p>
         <p><strong>Horario:</strong> <?php echo htmlspecialchars($cap['horario']); ?></p>
         <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($cap['telefono']); ?></p>
