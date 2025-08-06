@@ -1,0 +1,19 @@
+
+ .cap-item
+ {
+    grid-template-columns: repeat(3, 1fr);
+    display: inline-block;
+    padding: 20px;
+    width: 20%;
+    height: 20%;
+    background-color: #e8d3f8;
+    border-radius: 10px;
+   left: 4%;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(159, 132, 132, 0.08);
+   gap: 10%;
+    font-family: "Playfair Display", serif;
+    color: #333;
+    position: relative;
+ }

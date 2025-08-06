@@ -10,16 +10,21 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
         $caps_js[] = $columna; // Agrega cada caps al array
     }
 }
-?>
-<h1>Centros de Atención Primaria de la Salud (CAPS)</h1>
+?> 
+<link rel="stylesheet" href="/Municipalidad-Necochea-Caps/css/principal.css">
+<h1>Centro de Atencion Primaria de la Salud</h1>
+<h2>¿Que es un Caps?</h2>
+<p>Las siglas CAPS significa Centro de Atencion Primaria de la Salud.</p>
+<p>Su objetivo es brindar servicios de sanidad en los barrios que se encuentren en las cercanías de los mismos y las personas que decidan asistir.</p>
+<p>Son una puerta de entrada al sistema de salud, sirviendo de promoción y prevención.</p>
 <div class="caps-list">
     <?php if (!empty($caps_js)): ?>
         <?php foreach($caps_js as $columna): ?>
             <div class="cap-item">
-                <img src="./Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($columna['imagen']); ?>">
+                <img src="<?php echo htmlspecialchars($columna['imagen']); ?>">
                 <h2><?php echo htmlspecialchars($columna['nombre']); ?></h2> <!-- Mostrar nombre --> 
                 <p>Descripción: <?php echo htmlspecialchars($columna['descripcion']); ?></p> <!-- Mostrar descripcion -->
-                <p>Coordenadas: <?php echo htmlspecialchars($columna['coordenadas']); ?></p> <!-- Mostrar coordenadas -->
+                <!-- <p>Coordenadas: <?php echo htmlspecialchars($columna['coordenadas']); ?></p> Mostrar coordenadas -->
                 <p>Horario: <?php echo htmlspecialchars($columna['horario']); ?></p> <!-- Mostrar horario -->
                 <p>Teléfono: <?php echo htmlspecialchars($columna['telefono']); ?></p> <!-- Mostrar telefono -->
                 <a href="/Municipalidad-Necochea-Caps/php/general/mostrarCap.php?id_caps=<?php echo $columna['id_caps']; ?>">Ver detalles</a> <!-- Enlace a la pagina de detalles del caps -->

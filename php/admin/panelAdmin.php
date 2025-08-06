@@ -25,7 +25,7 @@ $result = mysqli_query($conexion, "SELECT id_caps, nombre FROM caps");
 </head>
 <body>
     <h1 style="text-align:center;">Panel de Administración de CAPS</h1>
-    <a href="agregarCap.php" class="boton-agregar">Agregar</a>
+    <a href="agregar_datos.php" class="boton-agregar">Agregar</a>
     <div class="lista-caps-admin">
         <?php while($cap = mysqli_fetch_assoc($result)): ?>
             <div class="renglon-cap">

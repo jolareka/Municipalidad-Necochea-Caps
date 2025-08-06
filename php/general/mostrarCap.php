@@ -8,7 +8,7 @@ if ($id_caps <= 0) {
     exit;
 }
 
-// Consulta para obtener la información básica del CAPS
+// Consulta para obtener la información basica del CAPS
 $sql_cap = "SELECT * FROM caps WHERE id_caps = $id_caps";
 $result_cap = mysqli_query($conexion, $sql_cap);
 $cap = mysqli_fetch_assoc($result_cap);
@@ -27,10 +27,9 @@ if (!$cap) {
 <body>
     <h1>Detalle del CAPS</h1>
     <div class="cap-item">
-        <img src="../img/<?php echo htmlspecialchars($cap['imagen']); ?>" alt="Imagen del CAPS" class="cap-img">
         <h2><?php echo htmlspecialchars($cap['nombre']); ?></h2>
+        <img src="/Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($cap['imagen']); ?>" alt="Imagen del CAPS" class="cap-img">
         <p><strong>Descripción:</strong> <?php echo htmlspecialchars($cap['descripcion']); ?></p>
-        <p><strong>Coordenadas:</strong> <?php echo htmlspecialchars($cap['coordenadas']); ?></p>
         <p><strong>Horario:</strong> <?php echo htmlspecialchars($cap['horario']); ?></p>
         <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($cap['telefono']); ?></p>
 
@@ -38,6 +37,14 @@ if (!$cap) {
         <?php
         $sql_prestaciones = "SELECT p.id_prestaciones, p.nombre FROM prestaciones p INNER JOIN prestaciones_caps pc ON p.id_prestaciones = pc.id_prestaciones WHERE pc.id_caps = $id_caps";
         $result_prestaciones = mysqli_query($conexion, $sql_prestaciones);
+        
+        // DEBUG: Líneas temporales para debugging (eliminar después)
+        echo "<!-- DEBUG: Consultando prestaciones para CAPS ID: $id_caps -->";
+        if (!$result_prestaciones) {
+            echo "<!-- ERROR en consulta prestaciones: " . mysqli_error($conexion) . " -->";
+        } else {
+            echo "<!-- Número de prestaciones encontradas: " . mysqli_num_rows($result_prestaciones) . " -->";
+        }
         ?>
         <div class="prestaciones">
             <h3>Prestaciones:</h3>
@@ -46,19 +53,27 @@ if (!$cap) {
                 <?php while($prest = mysqli_fetch_assoc($result_prestaciones)): ?>
                     <li>
                         <?php echo htmlspecialchars($prest['nombre']); ?>
-                        <!-- Profesionales de la prestación -->
+                        <!-- Profesionales de la prestacion -->
                         <?php
-                        // Mostrar profesionales relacionados a la prestación
-                        $sql_prof = "SELECT pr.nombre, pr.apellido, pp.horario_profesionales FROM profesionales pr INNER JOIN profesionales_prestaciones pp ON pr.id_profesionales = pp.id_profesionales WHERE pr.id_profesionales IN (SELECT id_profesionales FROM profesionales_prestaciones WHERE id_profesionales = pr.id_profesionales)";
+                        // CONSULTA CORREGIDA: Obtener profesional específico para esta prestación en este CAPS
+                        $id_prestacion = $prest['id_prestaciones'];
+                        $sql_prof = "SELECT pr.nombre, pr.apellido, pc.horario_profesional 
+                                   FROM profesionales pr 
+                                   INNER JOIN prestaciones_caps pc ON pr.id_profesionales = pc.id_profesional 
+                                   WHERE pc.id_caps = $id_caps AND pc.id_prestaciones = $id_prestacion";
                         $result_prof = mysqli_query($conexion, $sql_prof);
                         ?>
                         <ul>
                         <?php if ($result_prof && mysqli_num_rows($result_prof) > 0): ?>
                             <?php while($prof = mysqli_fetch_assoc($result_prof)): ?>
-                                <li><?php echo htmlspecialchars($prof['nombre'] . ' ' . $prof['apellido']); ?> (Horario: <?php echo htmlspecialchars($prof['horario_profesionales']); ?>)</li>
+                                <li><?php echo htmlspecialchars($prof['nombre'] . ' ' . $prof['apellido']); ?> 
+                                <?php if (!empty($prof['horario_profesional'])): ?>
+                                    (Horario: <?php echo htmlspecialchars($prof['horario_profesional']); ?>)
+                                <?php endif; ?>
+                                </li>
                             <?php endwhile; ?>
                         <?php else: ?>
-                            <li>No hay profesionales asignados.</li>
+                            <li>No hay profesionales asignados a esta prestación.</li>
                         <?php endif; ?>
                         </ul>
                     </li>
@@ -71,7 +86,10 @@ if (!$cap) {
 
         <!-- Campañas activas -->
         <?php
-        $sql_campanias = "SELECT c.imagen, cc.horario, cc.fecha_inicio, cc.fecha_fin, cc.requisitos FROM campañas_caps cc INNER JOIN campañas c ON cc.id_campañas = c.id_campañas WHERE cc.id_caps = $id_caps AND cc.fecha_fin >= CURDATE()";
+        $sql_campanias = "SELECT c.imagen, cc.horario, cc.fecha_inicio, cc.fecha_fin, cc.requisitos 
+                         FROM campañas_caps cc 
+                         INNER JOIN campañas c ON cc.id_campañas = c.id_campañas 
+                         WHERE cc.id_caps = $id_caps AND cc.fecha_fin >= CURDATE()";
         $result_campanias = mysqli_query($conexion, $sql_campanias);
         ?>
         <div class="campanias">
@@ -80,8 +98,8 @@ if (!$cap) {
                 <ul>
                 <?php while($camp = mysqli_fetch_assoc($result_campanias)): ?>
                     <li>
-                        <img src="/Municipalidad-Necochea-Caps/imagenes/caps/<?php echo urlencode($row['imagen']); ?>" alt="Imagen del CAPS" class="cap-img" onerror="this.style.display='none'">
-                    <h2><?php echo htmlspecialchars($row['nombre']); ?></h2>
+                        <img src="/Municipalidad-Necochea-Caps/php/imagenes/campanias/<?php echo htmlspecialchars($camp['imagen']); ?>" alt="Imagen de campaña" class="cap-img" onerror="this.style.display='none'">
+                        <h2>Campaña Activa</h2>
                         <span><strong>Horario:</strong> <?php echo htmlspecialchars($camp['horario']); ?></span><br>
                         <span><strong>Inicio:</strong> <?php echo htmlspecialchars($camp['fecha_inicio']); ?></span><br>
                         <span><strong>Fin:</strong> <?php echo htmlspecialchars($camp['fecha_fin']); ?></span><br>
@@ -121,6 +139,9 @@ if (!$cap) {
         </script>
 
     </div>
+    <footer>
+      <p>Municipalidad de Necochea</p>
+    </footer>
 </body>
 </html>
 <?php mysqli_close($conexion); ?>
