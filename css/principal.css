@@ -6,7 +6,7 @@
     padding: 20px;
     width: 20%;
     height: 20%;
-    background-color: #e8d3f8;
+    background-color: #fff7ff;
     border-radius: 10px;
    left: 4%;
     margin: 20px;
@@ -14,6 +14,48 @@
     box-shadow: 0 2px 8px rgba(159, 132, 132, 0.08);
    gap: 10%;
     font-family: "Playfair Display", serif;
-    color: #333;
+    color: #7a7a7a;;
     position: relative;
+    border: 10px solid #ff90ff;
+ }
+ h1
+ {
+text-align: center;
+   font-size: 2.5em;
+ }
+ h2 
+ {
+text-align: center;
+   font-size: 2em;
+ }
+ p
+ {
+text-align: center;
+   font-size: 1.5em;
+ }
+ .verdetalle
+ {
+ background-color:white ;
+    color:#7A7A7A;
+    border: none;
+    padding: 0.7rem;
+    width: 48%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 1rem;
+    border: 5px solid #ff90ff;
+    text-decoration: none;
+ }
+ .verdetalle:hover
+ {
+    border-color:#ff90ff;
+      background-color: #d5c4d9;
+  transition: background-color 0.3s ease;
+ }
+ nav
+ {
+background-color: #670066;
+    padding: 10px;
+    text-align: center;
  }

@@ -17,6 +17,7 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
 <p>Las siglas CAPS significa Centro de Atencion Primaria de la Salud.</p>
 <p>Su objetivo es brindar servicios de sanidad en los barrios que se encuentren en las cercanías de los mismos y las personas que decidan asistir.</p>
 <p>Son una puerta de entrada al sistema de salud, sirviendo de promoción y prevención.</p>
+
 <div class="caps-list">
     <?php if (!empty($caps_js)): ?>
         <?php foreach($caps_js as $columna): ?>
@@ -27,7 +28,7 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
                 <!-- <p>Coordenadas: <?php echo htmlspecialchars($columna['coordenadas']); ?></p> Mostrar coordenadas -->
                 <p>Horario: <?php echo htmlspecialchars($columna['horario']); ?></p> <!-- Mostrar horario -->
                 <p>Teléfono: <?php echo htmlspecialchars($columna['telefono']); ?></p> <!-- Mostrar telefono -->
-                <a href="/Municipalidad-Necochea-Caps/php/general/mostrarCap.php?id_caps=<?php echo $columna['id_caps']; ?>">Ver detalles</a> <!-- Enlace a la pagina de detalles del caps -->
+                <a class="verdetalle"href="/Municipalidad-Necochea-Caps/php/general/mostrarCap.php?id_caps=<?php echo $columna['id_caps']; ?>">Ver detalles</a> <!-- Enlace a la pagina de detalles del caps -->
             </div>
         <?php endforeach; ?>
     <?php else: ?>

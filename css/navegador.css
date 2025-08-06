@@ -138,8 +138,8 @@ html {
 }
 .dropdownmenu a {
 right: 0%;
-	background:#FFFFFF;
-	color: #670066;
+	background:#fff7ff;
+	color: #7A7A7A;
 	display: block;
 	font: bold 1.5em sans-serif;
 	padding: 10px 25px;
@@ -153,10 +153,4 @@ right: 0%;
 }
 .dropdownmenu li:hover a {
 	background: #ffffff;
-}
-header
-{
-background-color: #670066;
-width: 100%;
-height: 20%;
 }

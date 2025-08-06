@@ -1,3 +1,8 @@
+h1
+{
+color: #7a7a7a;
+    text-align: center;
+}
 .lista-caps-admin { 
     max-width: 500px; 
     margin: 40px auto; 
@@ -6,7 +11,8 @@
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
-    background: #fff; 
+    background: #fff7ff; 
+    color: #7a7a7a;
     margin-bottom: 10px; 
     padding: 10px 16px; 
     border-radius: 6px; 

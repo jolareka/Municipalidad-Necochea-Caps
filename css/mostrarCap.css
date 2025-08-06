@@ -6,8 +6,8 @@ body {
 }
 
 .cap-item {
-    background: #fff;
-    border-radius: 8px;
+    background: #fff7ff;
+    border: 10px solid #ff90fe;
     box-shadow: 0 2px 8px rgba(159, 132, 132, 0.08);
     margin: 30px auto;
     max-width: 600px;
@@ -22,18 +22,22 @@ body {
 }
 
 h1, h2, h3 {
-    color: #2c3e50;
+    color: #7A7A7A;
     text-align: center;
 }
 
 p {
-    color: #444;
+    color: #7A7A7A;
+    font-size: 1.3em;
     margin: 8px 0;
 }
 
 .prestaciones, .campanias {
+    font-size: 1.3em;
+    color: #7A7A7A;
+    border: 8px solid #ff90fe;
     margin-top: 24px;
-    background: #f0f4f8;
+    background: #fff7ff;
     border-radius: 6px;
     padding: 16px;
 }
