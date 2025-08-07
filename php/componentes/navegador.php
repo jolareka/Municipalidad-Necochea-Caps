@@ -7,12 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-     <nav>
-    <div class="dropdownmenu">
+     <nav class="navbar">
     <ul> 
         <li><a href="/Municipalidad-Necochea-Caps/php/generail/principal.php" class="link">Inicio</a></li>
         <li><a href="/Municipalidad-Necochea-Caps/php/general/sobreNosotros.php" class="link">Sobre Nosotros</a></li>
+    <img src=".\php\imagenes\logo\logo_neco.png"alt="">
     </ul>
-</nav>
+</nav> 
+</div>
 </body>
 </html>

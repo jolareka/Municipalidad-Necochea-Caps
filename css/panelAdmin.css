@@ -40,3 +40,15 @@ color: #7a7a7a;
 .acciones-cap button.eliminar { 
     background: #c00; 
 }
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; 
+    }
+    
+    .renglon-cap {
+        padding: 5px;
+    }
+    .acciones-cap button, .acciones-cap a { 
+        padding: 4px 8px; 
+    }
+}
