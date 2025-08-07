@@ -13,6 +13,7 @@ body {
 }
 
 /* Contenedor principal */
+@media ( max-width: 800px){
 .contenedor {
     max-width: 800px;
     margin: 20px auto;
@@ -43,7 +44,7 @@ h3 {
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
-
+}
 /* Mensajes */
 .mensaje {
     padding: 12px 20px;
