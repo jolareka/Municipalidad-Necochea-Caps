@@ -1,4 +1,4 @@
--- NECOCHEA --
+-- CAPS NECOCHEA --
 
 -- caps fucile --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
