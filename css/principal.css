@@ -13,6 +13,7 @@
   padding: 20px;
   margin: 15px;
   max-width: 300px;
+  max-height: 500px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
   grid-template-columns: repeat(4, 1fr);

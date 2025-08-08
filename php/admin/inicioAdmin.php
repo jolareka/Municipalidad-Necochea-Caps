@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if ($mensaje): ?>
             <div class="error"><?php echo $mensaje; ?></div>
         <?php endif; ?>
-        <form method="post">
+        <form method="post" id="formularioadmin">
             <input type="text" name="usuario" placeholder="Usuario" required>
             <input type="password" name="clave" placeholder="Clave" required>
             <button type="submit">Ingresar</button>
