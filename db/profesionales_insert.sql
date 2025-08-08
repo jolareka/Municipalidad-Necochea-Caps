@@ -54,7 +54,24 @@ INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NU
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Alejandra','Franco')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Juana','Blaiotto')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Yanina','Russo') --- una cra ---
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Bodega')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Pilegi')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Andrea','Fernandez')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Daniela','Luna') repetida en caps sur ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Natalia','Lucha')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Gisela','Zlatar') repetida caps 6 esquinas ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Andrea','Polla')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Natali','Mejia')
+
+--- caps villa zabala ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+
+--- caps 9 de julio ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
 
 
