@@ -1,28 +1,24 @@
  .cap-list{
-  width: 100%;            /* 🔹 Asegura que ocupe todo el ancho del contenedor */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  box-sizing: border-box; /* 🔹 Evita que el padding rompa el ancho */
+  max-width: 30%;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20%;
  }
  .cap-item
-{ 
-   width: 20%;
-   justify-content: space-around;
-  background: white;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  flex: 1 1 300px;
-  box-sizing: border-box;
-  font-family: "Playfair Display", serif;
-  border: 2px solid #ff90ff;
-  text-align: center;
-
-
+{
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #670066;
+  padding: 20px;
+  margin: 15px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  grid-template-columns: repeat(4, 1fr);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  border: 4px solid #ff90ff;
  }
  .cap-item:hover
  {

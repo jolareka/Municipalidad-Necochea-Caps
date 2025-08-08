@@ -167,7 +167,12 @@ html {
     font-size: 16px;
     list-style: none;
     border: 2px solid #ff90ff; /* Borde del menú */
+    box-shadow: 0 2px 7px #670066;
     border-radius:10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  grid-template-columns: repeat(4, 1fr);
+  cursor: pointer;
 }
 .navbar a:hover {
 color: #7a7a7a; /* Color al pasar el mouse */
