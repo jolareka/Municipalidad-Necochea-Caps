@@ -63,15 +63,47 @@ INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NU
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Natali','Mejia')
 
 --- caps villa zabala ---
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Sabrina','Rebollo')
 
 --- caps 9 de julio ---
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Valentina','Tullo')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Sol','Lamberti')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Marianella','Taboh')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Julian','Pollon')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Sol','Guerra')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Valeria','Serrano')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Cecilia','Alves') repetida en caps fomento ---
 
+--- caps norte ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Flavio','Ibarguen')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Laura','Bochi')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Lorena','Egidi')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Romina','Salomon')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Gisela','Zlatar') repetida en caps 6 esquinas y estacion quequen ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Veronica','Arriola')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Dolores','Spath')
 
+--- caps CIC ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Gonzalez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Carlos','Gallego')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Veronica','Gonzalez Armentia')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Analia','D´Ascola')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Soledad','Savoye')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Cristina','Balado')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Paola','Vazquez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Eugenia','Rodriguez')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Juliana','Podio') repetida en caps sur y fucile ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Andrea','Fernandez')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Sol','Lamberti') repetida en caps 9 de julio ---
+
+--- caps san martin ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Tania','Vazquez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Lorena',' Ciccarelli')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Veronica','Ciancaglini')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Gabriela','Salgado')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Mario','De Marciani')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Lucila','Del Col')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Claudia','Rodriguez') repetida en caps fucile
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Marina','')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Sol','Lamberti') repetida en caps 9 de julio y CIC ---
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Cecilia','Alves') repetida en caps 9 de julio y fomento ---
