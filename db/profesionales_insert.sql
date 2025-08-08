@@ -28,4 +28,33 @@ INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NU
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Paula','Gaitan')
 
 --- caps 6 esquinas ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Liliana','Bardel')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Karina','Canale')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','Gonzalez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Rocio','Ramirez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Belen','Castro')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Gisela','Zlatar')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Antonella','Springolo')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Candelaria','Bargallo')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Milena','Perez')
+
+--- caps fomento ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Lucio','Camusso')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Analia','Vazquez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Nicolas','Gauna')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Andrea','Domench')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Bodega')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Pilegi')
+--- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Candelaria','Bargallo') repetido en caps 6 esquinas ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Cecilia','Alves')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Florencia','Gonzalez')
+
+--- caps estacion quequen ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Micaela','Escasso')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Alejandra','Franco')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Juana','Blaiotto')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Yanina','Russo') --- una cra ---
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Bodega')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Pilegi')
+
 
