@@ -1,9 +1,9 @@
 /* Estilos para el formulario de CAPS */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
+      background-image: url("../imagen.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
