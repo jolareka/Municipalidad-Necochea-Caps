@@ -2,7 +2,7 @@
 
 -- caps fucile --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
-VALUES (NULL, 'Carlos Fucile', 'Centro de atencion primaria de la salud Carlos Fucile', '-38.57799736065549, -58.72151405994533', '8:00 a 14:00', '', '2262 247244', '');
+VALUES (NULL, 'Carlos Fucile', 'Centro de atencion primaria de la salud Carlos Fucile', '-38.57799736065549, -58.72151405994533', '8:00 a 14:00', '\imagenes\caps\fucile.jpeg', '2262 247244', '');
 
 -- caps puerto --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
@@ -14,7 +14,7 @@ VALUES (NULL, 'Villa Zabala', 'Postas de atencion Villa zabala', '-38.6023536035
 
 -- caps sur --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
-VALUES (NULL, 'Sur', 'Centro de atencion primaria de la salud Sur', '-38.56680163447325, -58.74087074815009', '8:00 a 14:00', '', '43-8187', '');
+VALUES (NULL, 'Sur', 'Centro de atencion primaria de la salud Sur', '-38.56680163447325, -58.74087074815009', '8:00 a 14:00', '\imagenes\caps\sur.jpeg', '43-8187', '');
 
 -- caps sudoeste --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
@@ -22,11 +22,11 @@ VALUES (NULL, 'Sudoeste', 'Centro de atencion primaria de la salud Sudoeste', '-
 
 -- caps flores --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
-VALUES (NULL, 'Flores', 'Centro de atencion primaria de la salud Flores', '-38.553284435141656, -58.75988214815095', '8:00 a 14:00', '', '43-7983', '');
+VALUES (NULL, 'Flores', 'Centro de atencion primaria de la salud Flores', '-38.553284435141656, -58.75988214815095', '8:00 a 14:00', '\imagenes\caps\flores.jpeg', '43-7983', '');
 
 -- caps norte --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
-VALUES (NULL, 'Norte', 'Centro de atencion primaria de la salud Norte', '-38.54456411641815, -58.74102121931522', '8:00 a 14:00', '', '42-4716', '');
+VALUES (NULL, 'Norte', 'Centro de atencion primaria de la salud Norte', '-38.54456411641815, -58.74102121931522', '8:00 a 14:00', '\imagenes\caps\norte.jpeg', '42-4716', '');
 
 -- caps nueve de julio --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
@@ -48,7 +48,7 @@ VALUES (NULL, 'Seis esquinas', 'Centro de atencion primaria de la salud Seis esq
 
 -- caps fomento --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
-VALUES (NULL, 'Fomento', 'Centro de atencion primaria de la salud Fomento', '-38.55983476631371, -58.71089770396959', '8:00 a 14:00', '', '45-3236', '');
+VALUES (NULL, 'Fomento', 'Centro de atencion primaria de la salud Fomento', '-38.55983476631371, -58.71089770396959', '8:00 a 14:00', '\imagenes\caps\fomento.jpeg', '45-3236', '');
 
 -- caps calcuta/estacion quequen --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
