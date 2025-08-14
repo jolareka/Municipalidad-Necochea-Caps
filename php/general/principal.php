@@ -12,11 +12,14 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
 }
 ?> 
 <link rel="stylesheet" href="/Municipalidad-Necochea-Caps/css/principal.css">
-<h1>Centro de Atencion Primaria de la Salud</h1>
+<h1>Centro de Atencion Primaria de la Salud 
+<img src="\Municipalidad-Necochea-Caps\php\imagenes\caps\imagen_caps.png" alt="" class="imagen-caps">
+</h1>
 <h2>¿Que es un Caps?</h2>
 <p class="pinicio">Las siglas CAPS significa Centro de Atencion Primaria de la Salud.</p>
 <p class="pinicio">Su objetivo es brindar servicios de sanidad en los barrios que se encuentren en las cercanías de los mismos y las personas que decidan asistir.</p>
-<p class="pinicio">Son una puerta de entrada al sistema de salud, sirviendo de promoción y prevención.</p>
+<p class="pinicio">Son una puerta de entrada al sistema de salud, sirviendo de promoción y prevención.</p> 
+
 
 <div class="caps-list">
     <?php if (!empty($caps_js)): ?>
@@ -35,7 +38,7 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
         <p>No se encontraron caps.</p>
     <?php endif; ?>
 </div>
-<h1>Te compartimos un mapa de  nuestra bella ciudad</h1>
+<h1>Te compartimos un mapa con todos los CAPS para ver cual queda mas cerca de tu domicilio</h1>
 <div id="map" style="width:100%;height:400px;margin:32px 0 0 0;border-radius:8px;"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsdto0bY3WfiIHL_JVxqiyAEFRphHOZ0g"></script>
 <script>
