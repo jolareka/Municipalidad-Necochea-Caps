@@ -1,0 +1,81 @@
+body
+{
+  background-image: url('../imagen.png'); /* Tu imagen de trama */
+  background-repeat: repeat;        /* Se repite en ambas direcciones */
+  background-size: auto; 
+}
+h1
+{
+color: #7a7a7a;
+    text-align: center;
+}
+.lista-caps-admin { 
+    max-width: 500px; 
+    margin: 40px auto; 
+}
+.modificar-caps {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;    
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.renglon-cap { 
+    width: 100%;
+    height: 3em;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background: #fff7ff; 
+    color: #7a7a7a;
+    margin-bottom: 10px; 
+    padding: 10px 16px; 
+    border-radius: 6px; 
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07); 
+}
+.nombre-cap { 
+    font-weight: bold; 
+}
+.acciones-cap { 
+    display: flex; 
+    gap: 8px; 
+}
+.acciones-cap form { 
+    display: inline; 
+}
+.acciones-cap button, .acciones-cap a { 
+    padding: 6px 12px; 
+    border-radius: 4px; 
+    border: none; 
+    background: #670066; 
+    color: #fff; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+.btnagregar
+{
+  padding: 6px 12px; 
+    border-radius: 4px; 
+    border: none; 
+    background: #670066; 
+    color: #fff; 
+    text-decoration: none; 
+    cursor: pointer; 
+   float: right;
+   margin-right: 30%;
+   margin-top: 10%;
+}
+.acciones-cap button.eliminar { 
+    background: #c00; 
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; 
+    }
+    
+    .renglon-cap {
+        padding: 5px;
+    }
+    .acciones-cap button, .acciones-cap a { 
+        padding: 4px 8px; 
+    }
+}

@@ -1,0 +1,377 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+@media ( max-width: 800px){
+.contenedor {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+h3 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+}
+/* Mensajes */
+.mensaje {
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.mensaje.exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Selector de tipo */
+.selector-tipo {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.selector-tipo label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.selector-tipo select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.selector-tipo select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Formularios */
+.formulario {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    display: none; /* Por defecto ocultos */
+}
+
+.formulario.activo {
+    display: block; /* Solo se muestra el activo */
+}
+
+/* Campos del formulario */
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.campo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Campo checkbox */
+.campo.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.campo.checkbox label {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.campo.checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.campo.checkbox select {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Botones */
+.btn-primario,
+.btn-secundario,
+.btn-cancelar {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.btn-primario {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primario:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secundario {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secundario:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #c0392b;
+}
+
+/* Contenedor de botones */
+.botones-formulario {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.botones-panel {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Lista de prestaciones */
+#lista-prestaciones {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    min-height: 60px;
+}
+
+.sin-prestaciones {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+.prestacion-item {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prestacion-item:last-child {
+    margin-bottom: 0;
+}
+
+.prestacion-info {
+    flex: 1;
+}
+
+.prestacion-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.prestacion-item button:hover {
+    background-color: #c82333;
+}
+
+/* Panel de agregar prestación */
+#panel-prestacion {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.panel-oculto {
+    display: none;
+}
+
+#panel-prestacion select,
+#panel-prestacion input {
+    margin-bottom: 15px;
+}
+
+/* Separador */
+.separador {
+    text-align: center;
+    margin: 20px 0;
+    color: #6c757d;
+    font-weight: 600;
+    position: relative;
+}
+
+.separador::before,
+.separador::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #dee2e6;
+}
+
+.separador::before {
+    left: 0;
+}
+
+.separador::after {
+    right: 0;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .campo.checkbox {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .campo.checkbox select {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .botones-panel {
+        flex-direction: column;
+    }
+    
+    .botones-formulario {
+        text-align: left;
+    }
+    
+    .btn-primario,
+    .btn-secundario,
+    .btn-cancelar {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
