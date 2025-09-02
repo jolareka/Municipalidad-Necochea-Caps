@@ -1,16 +1,11 @@
- .cap-list{
-.contenedor-tarjetas {
-  display: flex; /* Esto activa Flexbox */
-  flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente fila */
-  justify-content: space-between; /* Distribuye el espacio entre los elementos */
-  gap: 20px; /* Agrega un espacio entre las tarjetas */
-}
+ .caps-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
  }
  .cap-item
 {
-   flex-direction: calc(50% - 20px);
-   flex-direction: column;
-   justify-self: center;
    width: 15%;
    height: auto; 
  background-color: #fff;
@@ -22,7 +17,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
-
+flex: 0 0 15%; /*ancho de tarjetas para "salto de linea" gap para el espacio que hay entre las tarjetas*/
 }
  .cap-item:hover
  {
@@ -82,3 +77,26 @@ float: inline-end;
 position: relative;
 display: flex;
  }
+@media (max-width: 768px) {
+  .cap-item {
+    margin: 20px;
+    padding: 16px;
+  }
+.verdetalle
+{
+
+}
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+  .cap-item {
+    margin: 10px;
+    padding: 12px;
+  }
+  .verdetalle
+  {
+
+  }
+}
+ 
