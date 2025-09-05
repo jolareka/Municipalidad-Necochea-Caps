@@ -48,26 +48,24 @@ text-align: center;
  }
  .verdetalle
  {
-    width: 100%;
+   width: 100%;
     text-align: center;
  background-color:white ;
     color:#7A7A7A;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 1rem;
     border: 1px solid #ff90ff;
     text-decoration: none;
     display: flex;
     padding: 12px 20px;
-    justify-items: start;
+    display: inline-block;
  }
  .verdetalle:hover
  {
     border-color:#ff90ff;
-      background-color: #d5c4d9;
-  transition: background-color 0.3s ease;
+      background-color: #fcccfc;
+  transition: background-color 0.7s ease;
  }
  .imagen-caps
  {
