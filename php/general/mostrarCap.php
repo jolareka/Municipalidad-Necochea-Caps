@@ -47,6 +47,7 @@ if (!$cap) {
             echo "<!-- Número de prestaciones encontradas: " . mysqli_num_rows($result_prestaciones) . " -->";
         }
         ?>
+        <div class="tarjetas">
         <div class="prestaciones">
             <h3>Prestaciones:</h3>
             <?php if ($result_prestaciones && mysqli_num_rows($result_prestaciones) > 0): ?>
@@ -112,6 +113,7 @@ if (!$cap) {
                 <p>No hay campañas activas.</p>
             <?php endif; ?>
         </div>
+    </div>
 
         <!-- Mapa de ubicación -->   
          <div class="map-section">

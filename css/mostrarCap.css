@@ -10,20 +10,20 @@ body {
 
 #map {
 border-radius: 0.5rem;
-    border: 2px solid var(--primary-pink);
-    box-shadow: 0 0 10px rgb(219 60 167 / 0.3);
+    border: 2px solid #ff90ff ;
+    box-shadow: 0 0 10px #670066;
     width: 100%;
     max-width: 600px;
     height: 300px;
-    
-
+    justify-self: center;
 }
 img
 {
 width: 35%;
 height: 35%;
-    display: block;
-    margin: 0 auto;
+display: block;
+margin: 0 auto;
+justify-self: center;
 }
 h1,h2,h3 {
   font-weight: 700;
@@ -48,46 +48,35 @@ p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.prestaciones {
-max-width: 700px;
- max-width: 500px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  list-style: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 4px solid #ff90ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  grid-template-columns: repeat(4, 1fr);
-text-align: center;
+.prestaciones,.campanias {
+border: 3px solid  #ff90ff;
+    border-radius:10px;
+   padding: 5%;
+   width: 20%;
+    text-align: center;
+    color: #7a7a7a;
 }
-
-.prestaciones:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-.campanias
+.tarjetas
 {
-max-width: 700px;
-    max-width: 500px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  list-style: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 4px solid #ff90ff;
+ display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.prestaciones,.campanias strong 
+{
+display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-pink);
+}
+.prestaciones:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: inline-block;  
-    grid-template-columns: repeat(4, 1fr);
-    margin: 50px 
-
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .campanias:hover {
-  transform: translateY(-5px);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 .cap-item
