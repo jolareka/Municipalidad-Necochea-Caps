@@ -24,16 +24,16 @@ if (!$cap) {
     <title>Detalle del CAPS</title>
     <link rel="stylesheet" href="/Municipalidad-Necochea-Caps/css/mostrarCap.css">
 </head>
-<body>
+<body> 
+     <div class="cap-item">
     <h1>Detalle del CAPS</h1>
-    <div class="cap-item">
         <div class="caps-descripcion">
         <h2><?php echo htmlspecialchars($cap['nombre']); ?></h2>
         <img src="/Municipalidad-Necochea-Caps/php/imagenes/caps/<?php echo htmlspecialchars($cap['imagen']); ?>" alt="Imagen del CAPS" class="cap-img">
         <p><strong>Descripción:</strong> <?php echo htmlspecialchars($cap['descripcion']); ?></p>
         <p><strong>Horario:</strong> <?php echo htmlspecialchars($cap['horario']); ?></p>
         <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($cap['telefono']); ?></p>
-</div>
+
         <!-- Prestaciones -->
         <?php
         $sql_prestaciones = "SELECT p.id_prestaciones, p.nombre FROM prestaciones p INNER JOIN prestaciones_caps pc ON p.id_prestaciones = pc.id_prestaciones WHERE pc.id_caps = $id_caps";
@@ -113,13 +113,15 @@ if (!$cap) {
             <?php endif; ?>
         </div>
 
-        <!-- Mapa de ubicación -->    
+        <!-- Mapa de ubicación -->   
+         <div class="map-section">
          <h2>¿No conocias este Caps? </h2>
          <h3>Aqui te dejamos un mapa con su ubicacion</h3>
         <div id="map" style="width:100%;height:350px;margin:24px 0;border-radius:8px;"></div>
     
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsdto0bY3WfiIHL_JVxqiyAEFRphHOZ0g"></script>
         <script>
+    
             function initMap() {
                 // Obtener las coordenadas del CAPS
                 var coords = "<?php echo htmlspecialchars($cap['coordenadas']); ?>";
@@ -142,10 +144,12 @@ if (!$cap) {
             window.onload = initMap;
         </script>
 
-    </div>
+     </div>
+</div>
     <footer>
       <p>Municipalidad de Necochea</p>
     </footer>
+</div>  
 </body>
 </html>
 <?php mysqli_close($conexion); ?>
