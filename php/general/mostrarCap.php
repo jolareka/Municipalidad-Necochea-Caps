@@ -147,7 +147,8 @@ if (!$cap) {
         </script>
 
      </div>
-</div>
+     </div>
+     
     <footer>
       <p>Municipalidad de Necochea</p>
     </footer>
