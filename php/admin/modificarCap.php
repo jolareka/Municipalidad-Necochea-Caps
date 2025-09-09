@@ -122,20 +122,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Obtener prestaciones y profesionales actuales del CAPS
 $prestaciones_asignadas = [];
 if ($editando) {
-    $result = mysqli_query($conexion, "SELECT pc.id_prestaciones, pc.id_profesional, pc.horario_profesional, 
-                                              p.nombre as prestacion_nombre, 
-                                              CONCAT(pr.nombre, ' ', pr.apellido) as profesional_nombre
-                                       FROM prestaciones_caps pc 
-                                       LEFT JOIN prestaciones p ON pc.id_prestaciones = p.id_prestaciones
-                                       LEFT JOIN profesionales pr ON pc.id_profesional = pr.id_profesionales
-                                       WHERE pc.id_caps = $id_caps");
-    while ($row = mysqli_fetch_assoc($result)) {
-        $prestaciones_asignadas[$row['id_prestaciones']] = [
-            'id_profesional' => $row['id_profesional'],
-            'horario_profesional' => $row['horario_profesional'],
-            'prestacion_nombre' => $row['prestacion_nombre'],
-            'profesional_nombre' => $row['profesional_nombre']
-        ];
+    try {
+        $result = mysqli_query($conexion, "SELECT pc.id_prestaciones, pc.id_profesional, 
+                                                  p.nombre as prestacion_nombre, 
+                                                  CONCAT(pr.nombre, ' ', pr.apellido) as profesional_nombre
+                                           FROM prestaciones_caps pc 
+                                           LEFT JOIN prestaciones p ON pc.id_prestaciones = p.id_prestaciones
+                                           LEFT JOIN profesionales pr ON pc.id_profesional = pr.id_profesionales
+                                           WHERE pc.id_caps = $id_caps");
+        if (!$result) {
+            throw new Exception("Error en la consulta: " . mysqli_error($conexion));
+        }
+        while ($row = mysqli_fetch_assoc($result)) {
+            $prestaciones_asignadas[$row['id_prestaciones']] = [
+                'id_profesional' => $row['id_profesional'],
+                'prestacion_nombre' => $row['prestacion_nombre'],
+                'profesional_nombre' => $row['profesional_nombre']
+            ];
+        }
+    } catch (Exception $e) {
+        $error = $e->getMessage();
     }
 }
 
@@ -270,8 +276,7 @@ $profesionales = mysqli_query($conexion, "SELECT id_profesionales, nombre, apell
                             endwhile; 
                         else:
                         ?>
-                            <p style="color: #666; margin-top: 10px;">No hay prestaciones disponibles. <a href="prestaciones.php">Crear prestaciones</a></p>
-                        <?php endif; ?>
+                                                    <?php endif; ?>
                     </div>
                 </div>
             </div>
