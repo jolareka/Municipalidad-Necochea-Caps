@@ -15,21 +15,21 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
 <h1>Centro de Atencion Primaria de la Salud 
 <img src="\Municipalidad-Necochea-Caps\php\imagenes\caps\imagen_caps.png" alt="" class="imagen-caps">
 </h1>
-<h2>¿Que es un CAPS?</h2>
 <div class="contenedor-informacion">
+<h2>¿Que es un CAPS?</h2>
 <p class="pinicio">Las siglas CAPS significa Centro de Atencion Primaria de la Salud.</p>
 <p class="pinicio">Su objetivo es brindar servicios de sanidad en los barrios que se encuentren en las cercanías de los mismos y las personas que decidan asistir.</p>
 <p class="pinicio">Son una puerta de entrada al sistema de salud, sirviendo de promoción y prevención.</p> 
 </div>
 <div class="contenedor-objetivo">
-<h1>Objetivos</h1>
+<h2>Objetivos</h2>
 <p class="pinicio">✔️Ofrecer atención sanitaria básica y seguimiento del historial de los pacientes de manera segura y gratuita.</p>
 <p class="pinicio">✔️Facilitar el acceso a la salud en la comunidad.</p>
 <p class="pinicio">✔️Actuar como puerta de entrada al sistema de salud.</p>
 <p class="pinicio">✔️Promover la prevención y las prácticas saludables.</p>
 </div>
 <div class="contenedor-campaña">
-<h1>Campañas</h1>
+<h2>Campañas</h2>
 <p class="pinicio">A lo largo del año se realizan diferentes campañas de vacunación y prevención en los CAPS</p>
 <p class="pinicio">Son comunicadas por medio de folletos y medios de difusion y comunicacion de cada CAPS</p>
 <p class="pinicio">Estas campañas son fundamentales para proteger la salud de la comunidad y prevenir enfermedades.</p>

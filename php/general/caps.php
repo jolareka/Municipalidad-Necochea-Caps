@@ -16,7 +16,7 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/Municipalidad-Necochea-Caps/css/principal.css">
+<link rel="stylesheet" href="\Municipalidad-Necochea-Caps\css\caps.css">
     <title>Document</title>
 </head>
 <body>
