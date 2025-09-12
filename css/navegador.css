@@ -128,66 +128,37 @@ html {
     box-sizing: border-box;
 }
 .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #670066; /* Color de fondo del menú */
-    padding: 10px 0;
-    list-style: none;
+      background-color: #670066;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 15px;
 }
-.navbar ul {
-   list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: inline-end;
-}
-.navbar li {
-    position: relative;
-}
-.navbar ul li {
-    float: left;
-    position: relative;
-}
-.navbar ul li a {
-    display: block;
-    padding: 14px 20px;
-    color: #7A7A7A; /* Color del texto */
+.item-navegador {
+       color: white !important;
+  font-size: 20px;
+  font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.3s;
+    padding: 10px 15px;
+  font-size: x-large;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
-.navbar a {
-    background-color: #FFF7FF;
-    color: #7a7a7a;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 16px;
-    list-style: none;
-    border: 2px solid #ff90ff; /* Borde del menú */
-    box-shadow: 0 2px 7px #670066;
-    border-radius:10px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  grid-template-columns: repeat(4, 1fr);
-  cursor: pointer;
+.logo
+{
+    position: sticky;
+    justify-content: flex-end;
+    width: 15%;
+    height: 15%;
 }
-.navbar a:hover {
-color: #7a7a7a; /* Color al pasar el mouse */
-    text-decoration: underline;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .navbar li {
-        width: 100%;
-        text-align: center;
-    }
-}
+.item-navegador:hover 
+{
+ transform: matrix3d(1.5, 0, 0, 0, 0, 1.5, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1.5);
+ color: white !important;
+ }
+   

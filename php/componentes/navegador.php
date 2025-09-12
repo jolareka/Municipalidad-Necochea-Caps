@@ -8,11 +8,10 @@
 </head>
 <body>
      <nav class="navbar">
-    <ul> 
-        <li><a href="/Municipalidad-Necochea-Caps/php/general/principal.php" class="link">Inicio</a></li>
-        <li><a href="/Municipalidad-Necochea-Caps/php/general/sobreNosotros.php" class="link">Sobre Nosotros</a></li>
-    <img src=".\php\imagenes\logo\logo_neco.png"alt="">
-    </ul>
+        <a class="item-navegador"href="\Municipalidad-Necochea-Caps\index.php">Inicio</a>
+        <a class="item-navegador"href="\Municipalidad-Necochea-Caps\php\general\sobreNosotros.php">Sobre Nosotros</a>
+        <a class="item-navegador"href="\Municipalidad-Necochea-Caps\php\general\caps.php">CAPS</a>
+         <img src="\Municipalidad-Necochea-Caps\php\imagenes\logo\logo_neco.svg"alt="" class="logo">
 </nav> 
 </div>
 </body>

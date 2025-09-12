@@ -26,6 +26,7 @@ $result = mysqli_query($conexion, "SELECT id_caps, nombre FROM caps");
 <body>
     <div class="modificar-caps">
     <h1 style="text-align:center;">Panel de Administración de CAPS</h1>
+    <a class="botonvolver"href="\Municipalidad-Necochea-Caps\index.php">Volver Inicio</a>
     <a class="btnagregar"href="agregar_datos.php" class="boton-agregar">Agregar</a>
     <div class="lista-caps-admin">
         <?php while($cap = mysqli_fetch_assoc($result)): ?>

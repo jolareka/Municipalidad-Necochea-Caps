@@ -1,3 +1,6 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/Municipalidad-Necochea-Caps/php/componentes/navegador.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

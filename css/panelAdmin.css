@@ -67,6 +67,14 @@ color: #7a7a7a;
 .acciones-cap button.eliminar { 
     background: #c00; 
 }
+.botonvolver
+{
+   padding: 12px;
+   border-radius: 12px;
+    background-color: #670066;
+    color: #7a7a7a;
+    text-decoration: none;
+}
 @media (max-width: 480px) {
     h1 {
         font-size: 24px; 
