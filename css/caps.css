@@ -66,9 +66,8 @@ text-align: center;
  }
  .verdetalle:hover
  {
-    border-color:#ff90ff;
       background-color: #fcccfc;
-  transition: background-color 0.7s ease;
+  transition: background-color 1.5s ease;
  }
 /* Tablets (pantallas medianas) */
 @media (min-width: 769px) and (max-width: 1024px) {
