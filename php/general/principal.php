@@ -12,9 +12,11 @@ if ($result && mysqli_num_rows($result) > 0) { // Si hay resultados
 }
 ?> 
 <link rel="stylesheet" href="/Municipalidad-Necochea-Caps/css/principal.css">
+<div class="titulo-inicio">
 <h1>Centro de Atencion Primaria de la Salud 
 <img src="\Municipalidad-Necochea-Caps\php\imagenes\caps\imagen_caps.png" alt="" class="imagen-caps">
 </h1>
+</div>
 <div class="contenedor-informacion">
 <h2>¿Que es un CAPS?</h2>
 <p class="pinicio">Las siglas CAPS significa Centro de Atencion Primaria de la Salud.</p>
