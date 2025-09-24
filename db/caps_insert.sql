@@ -52,4 +52,4 @@ VALUES (NULL, 'Fomento', 'Centro de atencion primaria de la salud Fomento', '-38
 
 -- caps calcuta/estacion quequen --
 INSERT INTO `caps` (`id_caps`, `nombre`, `descripcion`, `coordenadas`, `horario`, `imagen`, `telefono`, `Campaña`) 
-VALUES (NULL, 'Estacion quequen', 'Centro de atencion primaria de la salud Estacion quequen', '-38.53174225277787, -58.705440390479865', '8:00 a 14:00', '', '45-3007', '');
+VALUES (NULL, 'Estación quequen', 'Centro de atencion primaria de la salud Estación Quequen', '-38.53174225277787, -58.705440390479865', '8:00 a 14:00', '', '45-3007', '');

@@ -1,7 +1,7 @@
 -- PROFESIONALES --
 
 -- caps fucile --
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Juan Jose','Segura')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Juan José','Segura')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Silvia','Coleclia')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Fadael','Hendrieksen')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Claudia','Rodriguez')
@@ -14,11 +14,11 @@ INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NU
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Eugenia','Amado')
 
 --- caps sur ---
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Sofia','Molina')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Sofía','Molina')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Myriam','Aranda')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Flavia','Aguero')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Flavia','AgÜero')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Agustina','Benitez')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Jose','Bamonde')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'María José','Bamonde')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Carolina','Marchal')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Silvina','Sorense')
 --- INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Juliana','Podio') --- repetida en fucile ---
@@ -30,7 +30,7 @@ INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NU
 --- caps 6 esquinas ---
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Liliana','Bardel')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Karina','Canale')
-INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria','Gonzalez')
+INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'María','Gonzalez')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Rocio','Ramirez')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Maria Belen','Castro')
 INSERT INTO `profesionales`(`id_profesionales`, `nombre`, `apellido`) VALUES (NULL,'Gisela','Zlatar')
